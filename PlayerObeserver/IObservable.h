@@ -2,8 +2,6 @@
 
 #include "PlayerData.h"
 
-#include <vector>
-
 class IObserver;
 
 class IObservable 
