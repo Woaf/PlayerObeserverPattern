@@ -11,7 +11,7 @@ public:
 	explicit Player (const std::string& playerName);
 
 	virtual void AddSubscriber (IObserver* subscriber) override;
-	virtual void SetNewData (const PlayerData& newPlayerData) override;
+	virtual void SetNewData (const PlayerData& newPlayerData);
 	virtual PlayerData GetData () override;
 
 private: 

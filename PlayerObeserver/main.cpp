@@ -25,11 +25,16 @@ int main ()
 	IObserver* adultNPC2 = new AdultNPC (40.f, 140.f, 0.f); // outside of player proximity
 	adultNPC2->Subscribe (player);
 
-	player->SetNewData ({0.0f, 0.0f, 0.0f, MountType::RAPTOR});
-	player->SetNewData ({0.0f, 0.0f, 0.0f, MountType::SPRINGER});
-	player->SetNewData ({0.0f, 0.0f, 0.0f, MountType::SKIMMER});
-	player->SetNewData ({0.0f, 0.0f, 0.0f, MountType::JACKAL});
-	player->SetNewData ({0.0f, 0.0f, 0.0f, MountType::GRIFFON});
+	Player* concretePlayer = dynamic_cast<Player*> (player);
+	concretePlayer->SetNewData ({0.0f, 0.0f, 0.0f, MountType::RAPTOR});
+	concretePlayer->SetNewData ({0.0f, 0.0f, 0.0f, MountType::SPRINGER});
+	concretePlayer->SetNewData ({0.0f, 0.0f, 0.0f, MountType::SKIMMER});
+	concretePlayer->SetNewData ({0.0f, 0.0f, 0.0f, MountType::JACKAL});
+	concretePlayer->SetNewData ({0.0f, 0.0f, 0.0f, MountType::GRIFFON});
 
+
+	/*
+		... delete raw pointers, or figure out a way to use smart pointers
+	*/
 	return 0;
 }
